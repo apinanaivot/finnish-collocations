@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below. A link to https://asiasanasto.fi is much appreciated."
+title: "Finnish collocations (Suomen kielen kollokaatiot)"
+type: dataset
+authors:
+  - name: "Asiasanasto.fi"
+    website: "https://asiasanasto.fi"
+url: "https://asiasanasto.fi"
+repository-code: "https://github.com/apinanaivot/finnish-collocations"
+license: CC-BY-4.0
+date-released: 2026-11-18
+keywords: [finnish, suomi, collocations, kollokaatiot, corpus, nlp, lexicography, dataset]
