@@ -1,7 +1,7 @@
 {
   "title": "Finnish collocations (Suomen kielen kollokaatiot)",
   "upload_type": "dataset",
-  "description": "Lemma-level collocation dataset for Finnish: 1.54M lemma pairs with logDice, co-occurrence frequency and dispersion; 241k attested example sentences. Built from ~3,700 public-domain Projekti Lönnrot books and Finnish Wikipedia, lemmatized with Voikko. Collocation and lemma files are CC BY 4.0; example sentences are CC BY-SA 4.0 (contain Wikipedia text). Extracted by <a href=\"https://asiasanasto.fi\">Asiasanasto.fi</a>.",
+  "description": "Lemma-level collocation candidates for Finnish: 1.54M lemma pairs with logDice, co-occurrence frequency and dispersion; 241k attested example sentences. Built from a 109M-token corpus of 3,172 public-domain Projekti Lönnrot books and 125,811 Finnish Wikipedia articles, lemmatized with Voikko. Collocation and lemma files are CC BY 4.0; example sentences are CC BY-SA 4.0 (contain Wikipedia text). Extracted by <a href=\"https://asiasanasto.fi\">Asiasanasto.fi</a>.",
   "creators": [
     { "name": "Asiasanasto.fi" }
   ],

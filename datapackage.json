@@ -1,0 +1,81 @@
+{
+  "name": "finnish-collocations",
+  "title": "Finnish collocations (Suomen kielen kollokaatiot)",
+  "description": "Lemma-level collocation candidates for Finnish with logDice association scores, co-occurrence and dispersion counts, surface phrases and attested example sentences.",
+  "version": "1.0.0",
+  "homepage": "https://asiasanasto.fi",
+  "id": "https://doi.org/10.5281/zenodo.24348963",
+  "keywords": ["Finnish", "collocations", "corpus linguistics", "logDice", "lexicography"],
+  "contributors": [{ "title": "Asiasanasto.fi", "path": "https://asiasanasto.fi", "role": "author" }],
+  "licenses": [{ "name": "CC-BY-4.0", "path": "https://creativecommons.org/licenses/by/4.0/", "title": "Creative Commons Attribution 4.0" }],
+  "sources": [
+    { "title": "Projekti Lönnrot", "path": "http://www.lonnrot.net/" },
+    { "title": "Finnish Wikipedia", "path": "https://fi.wikipedia.org/" }
+  ],
+  "resources": [
+    {
+      "name": "collocations",
+      "path": "data/kollokaatiot.tsv.gz",
+      "format": "tsv",
+      "mediatype": "text/tab-separated-values",
+      "encoding": "utf-8",
+      "dialect": { "delimiter": "\t", "header": true },
+      "licenses": [{ "name": "CC-BY-4.0", "path": "https://creativecommons.org/licenses/by/4.0/" }],
+      "schema": {
+        "fields": [
+          { "name": "lemma1", "type": "string", "description": "Alphabetically first lemma of the pair" },
+          { "name": "pos1", "type": "string", "constraints": { "enum": ["noun", "verb", "adjective", "adverb"] } },
+          { "name": "lemma2", "type": "string" },
+          { "name": "pos2", "type": "string", "constraints": { "enum": ["noun", "verb", "adjective", "adverb"] } },
+          { "name": "pair_freq", "type": "integer", "description": "Co-occurrence frequency within a ±3-token window inside one sentence" },
+          { "name": "docs", "type": "integer", "description": "Number of distinct documents the pair occurs in" },
+          { "name": "logdice", "type": "number", "description": "14 + log2(2·f(xy) / (f(x) + f(y)))" },
+          { "name": "lemma1_first", "type": "number", "description": "Share of co-occurrences where lemma1 precedes lemma2 (0–1)" },
+          { "name": "phrase", "type": "string", "description": "Most frequent surface realization; empty if not computed" }
+        ],
+        "primaryKey": ["lemma1", "lemma2"],
+        "missingValues": [""]
+      }
+    },
+    {
+      "name": "lemmas",
+      "path": "data/lemmat.tsv.gz",
+      "format": "tsv",
+      "mediatype": "text/tab-separated-values",
+      "encoding": "utf-8",
+      "dialect": { "delimiter": "\t", "header": true },
+      "licenses": [{ "name": "CC-BY-4.0", "path": "https://creativecommons.org/licenses/by/4.0/" }],
+      "schema": {
+        "fields": [
+          { "name": "lemma", "type": "string" },
+          { "name": "pos", "type": "string", "constraints": { "enum": ["noun", "verb", "adjective", "adverb"] } },
+          { "name": "freq", "type": "integer", "description": "Lemma frequency in the deduplicated corpus" },
+          { "name": "url", "type": "string", "format": "uri", "description": "Dictionary entry on Asiasanasto.fi" }
+        ],
+        "primaryKey": ["lemma"]
+      }
+    },
+    {
+      "name": "examples",
+      "path": "data/esimerkit.jsonl.gz",
+      "format": "jsonl",
+      "mediatype": "application/jsonl",
+      "encoding": "utf-8",
+      "licenses": [{ "name": "CC-BY-SA-4.0", "path": "https://creativecommons.org/licenses/by-sa/4.0/" }],
+      "schema": {
+        "fields": [
+          { "name": "lemma", "type": "string" },
+          { "name": "partner", "type": "string" },
+          { "name": "phrase", "type": "string" },
+          { "name": "sentence", "type": "string" },
+          { "name": "lemma_span", "type": "array", "description": "[start, end) character offsets of lemma in sentence" },
+          { "name": "partner_span", "type": "array", "description": "[start, end) character offsets of partner in sentence" },
+          { "name": "corpus", "type": "string", "constraints": { "enum": ["lonnrot", "wikipedia"] } },
+          { "name": "title", "type": "string" },
+          { "name": "author", "type": "string" },
+          { "name": "source_url", "type": "string", "format": "uri" }
+        ]
+      }
+    }
+  ]
+}
