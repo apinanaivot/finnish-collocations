@@ -1,5 +1,7 @@
 # Finnish collocations · Suomen kielen kollokaatiot
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24348963.svg)](https://doi.org/10.5281/zenodo.24348963)
+
 A lemma-level collocation dataset for Finnish: **1.5 million word pairs** scored by logDice
 association, with co-occurrence and dispersion counts, the most frequent surface realization of
 each pair (*juoda kahvia*, *villi kortti*, *meren rannalla*) and 241,216 attested example
@@ -102,6 +104,7 @@ For academic work, you can cite it like this:
   title  = {Finnish collocations (Suomen kielen kollokaatiot)},
   author = {{Asiasanasto.fi}},
   year   = {2026},
+  doi    = {10.5281/zenodo.24348963},
   url    = {https://asiasanasto.fi},
   note   = {Dataset, https://github.com/apinanaivot/finnish-collocations}
 }
